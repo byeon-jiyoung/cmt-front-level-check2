@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/index.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+<script defer src="js/index.js" charset="UTF-8"></script>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div>
+				<div><img alt="부트스트랩이미지" src="image/Bootstrap.png"></div>
+				<h1>Checkout form</h1>
+				<span>Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit form without completing it.</span>
+			</div>
+		</header>
+		<section class="overflow-hidden">
+			<article id="article-right">
+				<div class="overflow-hidden">
+					<h2 class="float-left">Your cart</h2>
+					<p class="float-right"><b>3</b></p>
+				</div>
+				<ul>
+					<li>
+						Product name <br>
+						<span class="text-12 text-gray">Brief description</span>
+						<span class="absolute right-20 top-20">$12</span>
+					</li>
+					<li>
+						Second product <br>
+						<span class="text-12 text-gray">Brief description</span>
+						<span class="absolute right-20 top-20">$8</span>
+					</li>
+					<li>
+						Third item <br>
+						<span class="text-12 text-gray">Brief description</span>
+						<span class="absolute right-20 top-20">$5</span>
+					</li>
+					<li class="bg-gray-100">
+						Promo code <br>
+						<span class="text-12 text-gray text-green bg-gray-100">EXAMPLECODE</span>
+						<span class="absolute right-20 top-20">-$5</span>
+					</li>
+					<li>
+						Total (USD)
+						<span class="absolute right-20 top-20"><b>$20</b></span>
+					</li>
+				</ul>
+				<div id="buy">
+					<div>
+						<input type="text" placeholder="Promo code" id="buy-text" class="float-left">
+						<input type="submit" value="Redeem" id="buy-submit" class="float-left">
+					</div>
+					<div class="clear"></div>
+				</div>
+			</article>
+			<article id="article-left">
+				<h2>Billing address</h2>
+				<form name="addressform" id="ba-form" method="post" action="index.html">
+					<div>
+						<div class="float-left width50">
+							<label>First name</label>
+							<input type="text" class="width90 required"> <!-- 자바스크립트에서 폼 요소에 접근하기 위해  name속성 사용함 -->
+							<span class="error necessary">Valid first name is required.</span>
+						</div>
+						<div class="float-right width50">
+							<label>Last name</label>
+							<input type="text" class="width90 required">
+							<span class="error necessary">Valid last name is required.</span>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div>
+						<label>Username</label>
+						<div class="overflow-hidden m-0"><span class="username float-left">@</span><input type="text" placeholder="Username" id="username" class="float-left required"></div>
+						<span class="error necessary">Your username is required.</span>
+					</div>
+					<div class="clear"></div>
+					<div>
+						<label>Email (Optional)</label>
+						<input type="text" placeholder="you@example.com" class="width100 pass" name="email">
+						<span class="error" id="email">Does not match email format.</span>
+					</div>
+					<div>
+						<label>Address</label>
+						<input type="text" placeholder="1234 Main St" class="width100 pass">
+					</div>
+					<div>
+						<label>Address2 (Optional)</label>
+						<input type="text" placeholder="Apartment or suite" class="width100 pass">
+					</div>
+					<div>
+						<div class="float-left width40">
+							<label>Country</label>
+							<select class="width100 required" name="country">
+								<option>Choose...</option>
+								<option>Unites State</option>
+							</select>
+							<span class="error necessary">Please select a valid country.</span>
+						</div>
+						<div class="float-left width40">
+							<label>State</label>
+							<select class="width100 required">
+								<option>Choose...</option>
+								<option>California</option>
+							</select>
+							<span class="error necessary">Please provide a valid state.</span>
+						</div>
+						<div class="float-left">
+							<label>Zip</label>
+							<input type="text" class="required">
+							<span class="error necessary">Zip code required.</span>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<hr>
+					<div class="my-20">
+						<label name="check1"><input type="checkbox" id="check1" name="check"> Shipping address is the same as my billing address<br></label>
+						<label name="check2"><input type="checkbox" id="check2" name="check"> Save this information for next time</label>
+						<span class="error" id="check">please select at least one</span>
+					</div>
+					<hr>
+					<div>
+						<h3>Payment</h3>
+						<div>
+							<label name="radio1"><input type="radio" name="radio" checked="checked" id="radio1"><span class="pass"> Credit card</span> <br></label>
+							<label name="radio2"><input type="radio" name="radio" id="radio2"><span class="pass"> Debit card</span> <br> </label>
+							<label name="radiod3"><input type="radio" name="radio" id="radio3"><span class="pass"> PayPal</span> </label>
+						</div>
+						<div class="clear"></div>
+						<div>
+							<div class="float-left width50 div-card">
+								<label>Name on card</label>
+								<input type="text" class="width90 required"> <br>
+								<span class="text-12 text-gray">Full name as displayed on card</span>
+								<span class="error necessary">Name on card is required.</span>
+							</div>
+							<div class="float-right width50 div-card">
+								<label>Credit card number</label>
+								<input type="text" class="width90 required">
+								<span class="error necessary">Credit card number is required.</span>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+						<div>
+							<div class="float-left">
+								<label>Expiration</label>
+								<input type="text" class="required">
+								<span class="error necessary">Expiration date required.</span>
+							</div>
+							<div class="float-left ml-20">
+								<label>CVV</label>
+								<input type="text" class="required">
+								<span class="error necessary">Security code required.</span>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<hr>
+					<div>
+						<input type="submit" value="Continue to checkout" id="form-submit">
+					</div>
+				</form>
+			</article>
+		</section>
+		<footer>
+			&copy; 2017-2019 Company Name
+			<div class="my-20">
+				<a href="#">Rrivacy</a>
+				<a href="#">Terms</a>
+				<a href="#">Support</a>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
