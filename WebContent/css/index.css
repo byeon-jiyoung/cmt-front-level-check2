@@ -4,6 +4,10 @@ body {
 	background-color: #f8f9fa;
 	font-family: 'Open Sans', sans-serif;
 }
+header, footer, section {
+	width: 95%;
+	margin: 0 auto;
+}
 header {
 	text-align: center;
 	padding-top: 50px;
@@ -26,7 +30,7 @@ footer a:last-child {
 	padding-right: 0;
 }
 hr {
-	border: 1px solid #E1E1E1;
+	border: 1px solid #e1e1e1;
 }
 form div {
 	margin-bottom: 20px;
@@ -36,6 +40,9 @@ input[type="text"], select { /*input태그 중 text type과 모든 select태그�
 	border-radius: 5px; /*모서리 각진부분 둥글게*/
 	height: 35px;
 	padding: 0 0 0 10px; /*태그 안 왼쪽에만 패딩값 지정*/
+}
+input[type="checkbox"], input[type="radio"] {
+	width: auto;
 }
 label {
 	display: block;
@@ -69,6 +76,12 @@ li:last-child { /*li태그 중 가장 마지막 li태그만 적용*/
 	font-size: 14px;
 	color: #dc3545;
 }
+.block {
+	display: block !important;
+}
+.hidden {
+	display: none;
+}
 .float-left {
 	float: left;
 }
@@ -89,7 +102,10 @@ li:last-child { /*li태그 중 가장 마지막 li태그만 적용*/
 	color: #28a745 !important; /*!important => 우선적용위해 적어놓음*/
 }
 .border-green {
-	border-color: #28a745;
+	border-color: #28a745 !important;
+}
+.border-red {
+	border-color: #dc3545 !important;
 }
 .bg-gray-100 {
 	background-color: #f8f9fa;
@@ -125,46 +141,27 @@ li:last-child { /*li태그 중 가장 마지막 li태그만 적용*/
 	width: 97%;
 }
 .width40 {
-	width: 36%;
+	width: 31%;
 }
 	
 
-
-@media screen and (max-width:700px) { /*모바일화면일경우 -> 최대 700px까지 적용됨*/
-	header, footer, section {
-		width: 90%;
-		margin: 0 auto;
-	}
-	input {
-		width: 98%;
-	}
-	input[type="checkbox"], input[type="radio"] {
-		width: auto;
-	}
-	#username {
-		border-radius: 0 5px 5px 0;
-		width: 92%;
-	}
-	.div-card {
-		margin-bottom: 20px;
-	}
-}
-
 @media all and (min-width:700px) {
-	#article-left { /*section전체부분 중 Billing address부분은 왼쪽 정렬 후 넓이 지정*/
+	header, footer, section {
+		width: 100%;
+	}
+	.width40 {
+		width: 36%;
+	}
+	.article-left { /*section전체부분 중 Billing address부분은 왼쪽 정렬 후 넓이 지정*/
 		width: 65%;
 		float: left;
 	}
-	#article-right { /*section전체부분 중 Your cart부분은 오른쪽 정렬 후 넓이 지정*/
+	.article-right { /*section전체부분 중 Your cart부분은 오른쪽 정렬 후 넓이 지정*/
 		width: 30%;
 		float: right;
 	}
-	#username { /*username -> input부분*/
-		border-radius: 0 5px 5px 0; /*border의 우측 상단과 하단에 둥글게 지정*/
-		width: 90%;
-	}
-	.div-card { /*card정보 입력하는 div*/
-		margin: 0;
+	.input-username { /*username -> input부분*/
+		width: 90% !important;
 	}
 }
 
@@ -179,7 +176,14 @@ li:last-child { /*li태그 중 가장 마지막 li태그만 적용*/
 	height: 35px;
 	line-height: 35px; /*높이 지정 후 글자가 상하로 가운데 정렬되게 지정*/
 }
-#form-submit { /*submit버튼*/
+.input-username { /*username -> input부분*/
+	border-radius: 0 5px 5px 0 !important; /*border의 우측 상단과 하단에 둥글게 지정*/
+	width: 85%;
+}
+.div-card { /*card정보 입력하는 div*/
+	margin: 0;
+}
+.form-submit { /*submit버튼*/
 	background-color: #007bff;
 	padding: 10px 0;
 	border: none;
@@ -189,7 +193,7 @@ li:last-child { /*li태그 중 가장 마지막 li태그만 적용*/
 	border-radius: 5px;
 	margin-top: 20px;
 }
-#article-right p {
+.article-right p {
 	background-color: #6c757d;
 	color: white;
 	font-weight: bold;
@@ -197,18 +201,18 @@ li:last-child { /*li태그 중 가장 마지막 li태그만 적용*/
 	border-radius: 45%;
 	padding-top: 7px;
 }
-#buy { /*promo code를 입력하는 부분을 묶은 div*/
+.promcode-div { /*promo code를 입력하는 부분을 묶은 div*/
 	border: 1px solid #ced4da;
 	margin-top: 10px;
 	padding: 10px;
 }
-#buy-text { /*promo code입력하는 input태그*/
+.promcode-div-text { /*promo code입력하는 input태그*/
 	border-radius: 3px 0 0 3px;
 	font-size: 16px;
 	float: left;
 	width: 60%;
 }
-#buy-submit { /*redeem submit버튼*/
+.promcode-div-submit { /*redeem submit버튼*/
 	background-color: #6c757d;
 	color: white;
 	border: none;

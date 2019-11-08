@@ -18,7 +18,7 @@
 			</div>
 		</header>
 		<section class="overflow-hidden">
-			<article id="article-right">
+			<article class="article-right">
 				<div class="overflow-hidden">
 					<h2 class="float-left">Your cart</h2>
 					<p class="float-right"><b>3</b></p>
@@ -49,15 +49,15 @@
 						<span class="absolute right-20 top-20"><b>$20</b></span>
 					</li>
 				</ul>
-				<div id="buy">
+				<div class="promcode-div">
 					<div>
-						<input type="text" placeholder="Promo code" id="buy-text" class="float-left">
-						<input type="submit" value="Redeem" id="buy-submit" class="float-left">
+						<input type="text" placeholder="Promo code" class="promcode-div-text" class="float-left">
+						<input type="submit" value="Redeem" class="promcode-div-submit" class="float-left">
 					</div>
 					<div class="clear"></div>
 				</div>
 			</article>
-			<article id="article-left">
+			<article class="article-left">
 				<h2>Billing address</h2>
 				<form name="addressform" id="ba-form" method="post" action="index.html">
 					<div>
@@ -75,7 +75,7 @@
 					<div class="clear"></div>
 					<div>
 						<label>Username</label>
-						<div class="overflow-hidden m-0"><span class="username float-left">@</span><input type="text" placeholder="Username" id="username" class="float-left required"></div>
+						<div class="overflow-hidden m-0"><span class="username float-left">@</span><input type="text" placeholder="Username" class="float-left required input-username"></div>
 						<span class="error necessary">Your username is required.</span>
 					</div>
 					<div class="clear"></div>
@@ -118,17 +118,17 @@
 					<div class="clear"></div>
 					<hr>
 					<div class="my-20">
-						<label name="check1"><input type="checkbox" id="check1" name="check" class="required"> Shipping address is the same as my billing address<br></label>
-						<label name="check2"><input type="checkbox" id="check2" name="check" class="required"> Save this information for next time</label>
-						<span class="error necessary">please select at least one</span><span class="necessary"></span>
+						<label for="check1"><input type="checkbox" id="check1" name="check" class="required"> Shipping address is the same as my billing address<br></label>
+						<label for="check2"><input type="checkbox" id="check2" name="check" class="required"> Save this information for next time</label>
+						<span class="error necessary" id="check">please select at least one</span><span class="necessary"></span>
 					</div>
 					<hr>
 					<div>
 						<h3>Payment</h3>
 						<div>
-							<label name="radio1"><input type="radio" name="radio" checked="checked" id="radio1"><span class="unrequired"> Credit card</span> <br></label>
-							<label name="radio2"><input type="radio" name="radio" id="radio2"><span class="unrequired"> Debit card</span> <br> </label>
-							<label name="radiod3"><input type="radio" name="radio" id="radio3"><span class="unrequired"> PayPal</span> </label>
+							<label for="radio1"><input type="radio" name="radio" checked="checked" id="radio1"><span class="unrequired"> Credit card</span> <br></label>
+							<label for="radio2"><input type="radio" name="radio" id="radio2"><span class="unrequired"> Debit card</span> <br> </label>
+							<label for="radiod3"><input type="radio" name="radio" id="radio3"><span class="unrequired"> PayPal</span> </label>
 						</div>
 						<div class="clear"></div>
 						<div>
@@ -162,7 +162,7 @@
 					</div>
 					<hr>
 					<div>
-						<input type="submit" value="Continue to checkout" id="form-submit">
+						<input type="submit" value="Continue to checkout" class="form-submit">
 					</div>
 				</form>
 			</article>

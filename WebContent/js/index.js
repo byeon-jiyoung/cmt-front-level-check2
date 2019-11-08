@@ -3,7 +3,7 @@ document.getElementById("ba-form").onsubmit = formCheck;
 function formCheck() {
 	var check = true; //check변수가 true면 return true, fasle면 return false
 	
-	changeDisplay("none");
+	changeDisplay();
 	unrequiredChangeColor();
 	
 	var required = document.getElementsByClassName("required");
@@ -14,44 +14,48 @@ function formCheck() {
 			break;
 		}
 	}
+	if(checkChoice == false) {
+		document.getElementById("check").classList.add("block");
+	}
+
 	for(var i=0; i<required.length; i++) {
-		if(!required[i].value || required[i].selectedIndex == 0 || checkChoice == false) {
-			required[i].style.borderColor="#dc3545";
-			document.getElementsByClassName("necessary")[i].style.display = "block";
+		if(required[i].value === "" || required[i].selectedIndex == 0) {
+			required[i].classList.add("border-red");
+			document.getElementsByClassName("necessary")[i].classList.add("block");
 			check = false;
 		}else {
-			required[i].style.borderColor="#28a745";
+			required[i].classList.remove("border-red");
+			required[i].classList.add("border-green");
 		}
 	}
 	
 	var email = document.addressform.email.value;
 	if(email) { //email값이 입력되었을 때 형식이 틀린 경우
-		var emailReg = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+		var emailReg = /^[0-9a-zA-Z]*@[0-9a-zA-Z]*\.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$/i;
 		var result = emailReg.test(email);
 		if(result == false) {
-			document.getElementById("email").style.display = "block";
-			document.getElementById("input-email").style.borderColor = "#dc3545";
+			document.getElementById("email").classList.add("block");
+			document.getElementById("input-email").classList.add("border-red");
 			check = false;
 		}
 	}
 	
-	if(check == false) {
-		return false;
-	}else {
-		return true;
-	}
+	return check;
 }
 
-function changeDisplay(style) { //해당 id를 가진 태그의 display속성을 변경하기 위한 함수 생성
-	document.getElementById("email").style.display = style;
+function changeDisplay() { //해당 id를 가진 태그의 display속성을 변경하기 위한 함수 생성
+	document.getElementById("email").classList.remove("block");
+	document.getElementById("input-email").classList.remove("border-red");
+	document.getElementById("email").classList.add("hidden");
 	for(var i=0; i<document.getElementsByClassName("necessary").length; i++) {
-		document.getElementsByClassName("necessary")[i].style.display = style;
+		document.getElementsByClassName("necessary")[i].classList.remove("block");
+		document.getElementsByClassName("necessary")[i].classList.add("hidden");
 	}
 }
 
 function unrequiredChangeColor() {
 	for(var i=0; i<document.getElementsByClassName("unrequired").length; i++) { //pass클래스를 가진 태그에 녹색 선과 글자색이 적용되도록
-		document.getElementsByClassName("unrequired")[i].style.borderColor = "#28a745";
+		document.getElementsByClassName("unrequired")[i].classList.add("border-green");
 	}
 }
 
