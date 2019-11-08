@@ -69,7 +69,7 @@ li:last-child { /*li태그 중 가장 마지막 li태그만 적용*/
 .error {
 	display: none; /*화면에 안보이게*/
 	font-size: 14px;
-	color: red;
+	color: #dc3545;
 }
 .float-left {
 	float: left;
@@ -89,6 +89,9 @@ li:last-child { /*li태그 중 가장 마지막 li태그만 적용*/
 }
 .text-green {
 	color: #28a745 !important; /*!important => 우선적용위해 적어놓음*/
+}
+.border-green {
+	border-color: #28a745;
 }
 .bg-gray-100 {
 	background-color: #f8f9fa;
