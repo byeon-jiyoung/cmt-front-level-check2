@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/*태그별 css적용*/
 body {
 	background-color: #f8f9fa;
 	font-family: 'Open Sans', sans-serif;
@@ -61,7 +60,6 @@ li:last-child { /*li태그 중 가장 마지막 li태그만 적용*/
 
 
 
-/*공통되는 클래스별 css적용*/
 .container {
 	max-width: 950px;
 	margin: 0 auto;
